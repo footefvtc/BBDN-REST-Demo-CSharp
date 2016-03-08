@@ -23,7 +23,7 @@ Open Microsoft Visual Studio. Click File->Open and navigate to the directory you
 You may need to add a few references. To accomplish this, you will need to right click on 'References' in the Solution Explorer and then select 'Add Reference...'. From the subsequent screen, use the search tool to discover and install the packages listed above.
 
 ### Configuring the Code Sample
-All data is located in the BBDN-REST-Demo-CSharp/bbdn/rest/Constants.cs file. You <i>can</> change these values as you see fit. However, you must change three values:
+All data is located in the BBDN-REST-Demo-CSharp/bbdn/rest/Constants.cs file. You <i>can</i> change these values as you see fit. However, you must change three values:
 - HOSTNAME: must be set equal to your test environment's URL with https.
 - KEY: replace <insert your key> with your key.
 - SECRET: replace <insert your secret> with your secret.
