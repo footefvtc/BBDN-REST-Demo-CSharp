@@ -4,9 +4,9 @@ namespace BBDNRESTDemoCSharp
 {
 	public class Constants
 	{
-		public static string HOSTNAME = "https://ultra-integ.int.bbpd.io";
-		public static string KEY = "d03caa33-1095-47b9-bc67-f5cd634430b1"; 
-		public static string SECRET = "QSFClAMu5KmoG8yFbHTi7pjhsseJl4uz";
+		public static string HOSTNAME = "https://localhost:9877";
+		public static string KEY = "<insert your key>"; 
+		public static string SECRET = "<insert your secret>";
 
 		public static string AUTH_PATH = "/learn/api/public/v1/oauth2/token";
 
