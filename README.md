@@ -46,4 +46,4 @@ The syntax is BBDN-REST-Demo-Csharp.exe --<object> CRUD or BBDN-REST-Demo-CSharp
 For CRUD, you can enter a string with the operations you wish to perform on the object. for --all, all operations are assumed. C = Create, R = Read, U = Update, D = Delete. There should be no spaces. Ordering doesn't matter, but only CRUD are accepted. Any other value is ignored.
 	
 ### Conclusion
-This code will give you the base knowledge you need to interact with the Blackboard Learn REST services using C#. For a thorough walkthrough of this code, visit the corresponding Blackboard Help page <a href="https://community.blackboard.com/community/developers/rest" target="_blank">here</a>.
+This code will give you the base knowledge you need to interact with the Blackboard Learn REST services using C#. For a thorough walkthrough of this code, visit the corresponding Community site page <a href="https://community.blackboard.com/docs/DOC-1686" target="_blank">here</a>.
