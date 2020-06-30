@@ -1,21 +1,21 @@
 # BBDN-REST-Demo-CSharp
 This project contains sample code for interacting with the Blackboard Learn REST Web Services in C#. This sample was built in Visual Studio Community 2015 against .NET Framework 4.5. It uses HttpClient and async/await processing.
 
-###Project at a glance:
+### Project at a glance:
 - Target: Blackboard Learn SaaS 2015.12.0 and above
 - Source Release: v1.0
 - Release Date  2016-03-08
 - Author: shurrey
 - Tested on Blackboard Learn SaaS Release 2015.12.0-ci.16+149e9d4
 
-###Requirements:
+### Requirements:
 - Visual Studio - This sample was built with Microsoft Visual Studio 2015 Community Edition
 - Requires the following libraries for .NET Framework 4.5:
---   Microsoft.Bcl version 1.1.10
---   Microsoft.Bcl.Build version 1.0.21
---   Microsoft.Net.Http version 2.2.29
---   Newtonsoft.Json version 8.0.2
---   Nito.AsyncEx version 3.0.1
+  -   Microsoft.Bcl version 1.1.10
+  -   Microsoft.Bcl.Build version 1.0.21
+  -   Microsoft.Net.Http version 2.2.29
+  -   Newtonsoft.Json version 8.0.2
+  -   Nito.AsyncEx version 3.0.1
 
 ### Setting Up Your Project
 Open Microsoft Visual Studio. Click File->Open and navigate to the directory you cloned this project in. Select BBDN-REST-Demo-CSharp.sln and open it. Your project workspace is now ready to go.
