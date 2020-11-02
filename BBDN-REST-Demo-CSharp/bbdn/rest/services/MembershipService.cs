@@ -6,7 +6,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Microsoft.VisualStudio.Services.WebApi; /* for PATCH */
 using BBDNRESTDemoCSharp;
 
 namespace BBDNRESTDemoCSharp
@@ -14,6 +13,7 @@ namespace BBDNRESTDemoCSharp
     public class MembershipService : IRestService<Membership>, IDisposable
     {
         HttpClient client;
+        String access_token;
 
 
         public MembershipService(Token token)
@@ -21,6 +21,7 @@ namespace BBDNRESTDemoCSharp
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.access_token);
+            access_token = token.access_token;
         }
 
         
@@ -83,10 +84,16 @@ namespace BBDNRESTDemoCSharp
 
             try
             {
-                var json = JsonConvert.SerializeObject(updateMembership);
-                var body = new StringContent(json, Encoding.UTF8, "application/json");
+                var s = new JsonSerializerSettings { DateFormatHandling = DateFormatHandling.MicrosoftDateFormat };
 
-                HttpResponseMessage response = await HttpClientExtensions.PatchAsync(client, Constants.HOSTNAME + Constants.COURSE_PATH + "/externalId:" + Constants.COURSE_ID + "users/externalId:" + Constants.USER_ID, body);
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"), Constants.HOSTNAME + Constants.COURSE_PATH + "/externalId:" + Constants.COURSE_ID + "users/externalId:" + Constants.USER_ID);
+                var json = JsonConvert.SerializeObject(updateMembership);
+
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", access_token);
+                request.Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json;odata=verbose");
+
+
+                HttpResponseMessage response = await client.SendAsync(request);
 
 
                 if (response.IsSuccessStatusCode)

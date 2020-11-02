@@ -4,7 +4,7 @@ namespace BBDNRESTDemoCSharp
 {
 	public class Constants
 	{
-		public static string HOSTNAME = "https://localhost:9877";
+		public static string HOSTNAME = "https://<your learn domain>";
 		public static string KEY = "<insert your key>"; 
 		public static string SECRET = "<insert your secret>";
 

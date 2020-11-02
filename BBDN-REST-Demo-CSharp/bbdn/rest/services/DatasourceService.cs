@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Microsoft.VisualStudio.Services.WebApi; /* for PATCH */
 using BBDNRESTDemoCSharp;
 
 namespace BBDNRESTDemoCSharp
@@ -15,6 +14,8 @@ namespace BBDNRESTDemoCSharp
     public class DatasourceService : IRestService<Datasource>, IDisposable
     {
 	    HttpClient client;
+		String access_token;
+
 
 
 	    public DatasourceService (Token token)
@@ -22,6 +23,7 @@ namespace BBDNRESTDemoCSharp
 		    client = new HttpClient ();
 		    client.MaxResponseContentBufferSize = 256000;
 		    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue ("Bearer", token.access_token);
+			access_token = token.access_token;
 	    }
 
 	    
@@ -74,10 +76,16 @@ namespace BBDNRESTDemoCSharp
             Datasource datasource = new Datasource();
 
 		    try {
-			    var json = JsonConvert.SerializeObject (updateDataSource);
-			    var body = new StringContent (json, Encoding.UTF8, "application/json");
+				var s = new JsonSerializerSettings { DateFormatHandling = DateFormatHandling.MicrosoftDateFormat };
 
-			    HttpResponseMessage response =  await HttpClientExtensions.PatchAsync (client, Constants.HOSTNAME + Constants.DATASOURCE_PATH + "/externalId:" + Constants.DATASOURCE_ID, body);
+				var request = new HttpRequestMessage(new HttpMethod("PATCH"), Constants.HOSTNAME + Constants.DATASOURCE_PATH + "/externalId:" + Constants.DATASOURCE_ID);
+				var json = JsonConvert.SerializeObject(updateDataSource);
+
+				request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", access_token);
+				request.Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json;odata=verbose");
+
+
+				HttpResponseMessage response = await client.SendAsync(request);
 			
 
 			    if (response.IsSuccessStatusCode) {

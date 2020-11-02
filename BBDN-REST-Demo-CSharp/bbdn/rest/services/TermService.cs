@@ -6,7 +6,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Microsoft.VisualStudio.Services.WebApi; /* for PATCH */
 using BBDNRESTDemoCSharp;
 
 namespace BBDNRESTDemoCSharp
@@ -14,13 +13,14 @@ namespace BBDNRESTDemoCSharp
     public class TermService : IRestService<Term>, IDisposable
     {
         HttpClient client;
-
+        String access_token;
 
         public TermService(Token token)
         {
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.access_token);
+            access_token = token.access_token;
         }
 
         
@@ -83,10 +83,16 @@ namespace BBDNRESTDemoCSharp
 
             try
             {
-                var json = JsonConvert.SerializeObject(updateTerm);
-                var body = new StringContent(json, Encoding.UTF8, "application/json");
+                var s = new JsonSerializerSettings { DateFormatHandling = DateFormatHandling.MicrosoftDateFormat };
 
-                HttpResponseMessage response = await HttpClientExtensions.PatchAsync(client, Constants.HOSTNAME + Constants.TERM_PATH + "externalId:" + Constants.TERM_ID, body);
+                var request = new HttpRequestMessage(new HttpMethod("PATCH"), Constants.HOSTNAME + Constants.TERM_PATH + "externalId:" + Constants.TERM_ID);
+                var json = JsonConvert.SerializeObject(updateTerm);
+
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", access_token);
+                request.Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json;odata=verbose");
+
+
+                HttpResponseMessage response = await client.SendAsync(request);
 
 
                 if (response.IsSuccessStatusCode)
