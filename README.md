@@ -1,21 +1,25 @@
 # BBDN-REST-Demo-CSharp
-This project contains sample code for interacting with the Blackboard Learn REST Web Services in C#. This sample was built in Visual Studio Community 2015 against .NET Framework 4.5. It uses HttpClient and async/await processing.
+This project contains sample code for interacting with the Blackboard Learn REST Web Services in C#. This sample was built in Microsoft Visual Studio Community 2019 against .NET Framework 4.7.2. It uses HttpClient and async/await processing.
 
 ### Project at a glance:
 - Target: Blackboard Learn SaaS 2015.12.0 and above
-- Source Release: v1.0
-- Release Date  2016-03-08
+- Source Release: v2.0
+- Release Date  2020-11-02
 - Author: shurrey
-- Tested on Blackboard Learn SaaS Release 2015.12.0-ci.16+149e9d4
+- Tested on Blackboard Learn SaaS Release 3800.19.0-rel.54+54663c8
 
 ### Requirements:
-- Visual Studio - This sample was built with Microsoft Visual Studio 2015 Community Edition
-- Requires the following libraries for .NET Framework 4.5:
-  -   Microsoft.Bcl version 1.1.10
-  -   Microsoft.Bcl.Build version 1.0.21
-  -   Microsoft.Net.Http version 2.2.29
-  -   Newtonsoft.Json version 8.0.2
-  -   Nito.AsyncEx version 3.0.1
+- Visual Studio - This sample was built with Microsoft Visual Studio Community 2019
+- Requires the following libraries for .NET Framework 4.7.2:
+  - Microsoft.Bcl version 1.1.10
+  - Microsoft.Bcl.Build version 1.0.21
+  - Microsoft.Net.Http version 2.2.29
+  - Newtonsoft.Json version 12.0.3
+  - Nito.AsyncEx version 5.1.0
+  - Nito.AsyncEx.Context version 5.1.0
+  - Nito.AsyncEx.Tasks version 5.1.0
+  - Nito.Disposables version 2.2.0
+  - System.Collections.Immutable version 1.4.0
 
 ### Setting Up Your Project
 Open Microsoft Visual Studio. Click File->Open and navigate to the directory you cloned this project in. Select BBDN-REST-Demo-CSharp.sln and open it. Your project workspace is now ready to go.
@@ -46,4 +50,4 @@ The syntax is BBDN-REST-Demo-Csharp.exe --<object> CRUD or BBDN-REST-Demo-CSharp
 For CRUD, you can enter a string with the operations you wish to perform on the object. for --all, all operations are assumed. C = Create, R = Read, U = Update, D = Delete. There should be no spaces. Ordering doesn't matter, but only CRUD are accepted. Any other value is ignored.
 	
 ### Conclusion
-This code will give you the base knowledge you need to interact with the Blackboard Learn REST services using C#. For a thorough walkthrough of this code, visit the corresponding Community site page <a href="https://community.blackboard.com/docs/DOC-1686" target="_blank">here</a>.
+This code will give you the base knowledge you need to interact with the Blackboard Learn REST services using C#. For a thorough walkthrough of this code, visit the corresponding Community site page <a href="https://docs.blackboard.com/learn/REST/REST%20Demo%20Using%20CSharp.html" target="_blank">here</a>.
