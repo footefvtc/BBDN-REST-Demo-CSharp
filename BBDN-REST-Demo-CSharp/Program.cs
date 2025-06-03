@@ -326,6 +326,7 @@ namespace BBDNRESTDemoCSharp
                 Console.WriteLine("Membership Read: " + membership.ToString());
             }
 
+
             if (operations.HasFlag(Operations.U))
             {
                 Membership newMembership = MembershipHelper.GenerateObject();

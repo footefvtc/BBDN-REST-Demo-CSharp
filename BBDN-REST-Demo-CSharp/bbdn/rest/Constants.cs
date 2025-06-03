@@ -4,9 +4,9 @@ namespace BBDNRESTDemoCSharp
 {
 	public class Constants
 	{
-		public static string HOSTNAME = "https://<your learn domain>";
-		public static string KEY = "<insert your key>"; 
-		public static string SECRET = "<insert your secret>";
+		public static string HOSTNAME = "https://fvtcsdev.blackboard.com";
+		public static string KEY = "1bd8a5a8-b77a-4117-bec0-ec1ac8ba0a47"; 
+		public static string SECRET = "QwB48XHYeE0n1lZjVjAwoVugKfQgXK06";
 
 		public static string AUTH_PATH = "/learn/api/public/v1/oauth2/token";
 
@@ -21,12 +21,12 @@ namespace BBDNRESTDemoCSharp
 		public static string TERM_DISPLAY = "Term Used For REST Demo - CSharp";
 
 		public static string COURSE_PATH = "/learn/api/public/v1/courses";
-		public static string COURSE_ID = "BBDN-CSharp-REST-Demo";
+		public static string COURSE_ID = "10152125-1-2025spring";
 		public static string COURSE_NAME = "Course Used For REST Demo - CSharp";
 		public static string COURSE_DESCRIPTION = "Course Used For REST Demo - CSharp";
 
 		public static string USER_PATH = "/learn/api/public/v1/users";
-		public static string USER_ID = "bbdnrestdemocsharpuser";
+		public static string USER_ID = "700182927";
 		public static string USER_NAME = "restcsharpuser";
 		public static string USER_PASS = "Bl@ckb0ard!";
 		public static string USER_FIRST = "CSharp";

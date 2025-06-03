@@ -58,7 +58,8 @@ namespace BBDNRESTDemoCSharp
         {
             Membership membership = new Membership();
 
-            var uri = new Uri(Constants.HOSTNAME + Constants.COURSE_PATH + "/externalId:" + Constants.COURSE_ID + "users/externalId:" + Constants.USER_ID);
+            var uri = new Uri(Constants.HOSTNAME + Constants.COURSE_PATH + "/externalId:" + Constants.COURSE_ID + "/users/externalId:" + Constants.USER_ID);
+            //var uri = new Uri(Constants.HOSTNAME + Constants.COURSE_PATH + "/" + Constants.COURSE_ID + "/users"); ///externalId:" + Constants.USER_ID);
 
             try
             {
