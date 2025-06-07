@@ -26,7 +26,7 @@ namespace BBDNRESTDemoCSharp
 		public static string COURSE_DESCRIPTION = "Course Used For REST Demo - CSharp";
 
 		public static string USER_PATH = "/learn/api/public/v1/users";
-		public static string USER_ID = "700182927";
+		public static string USER_ID = "500202940";
 		public static string USER_NAME = "restcsharpuser";
 		public static string USER_PASS = "Bl@ckb0ard!";
 		public static string USER_FIRST = "CSharp";

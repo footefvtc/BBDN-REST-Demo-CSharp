@@ -1,6 +1,7 @@
 ﻿using BBDNRESTDemoCSharp.bbdn.rest.helpers;
 using Nito.AsyncEx;
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace BBDNRESTDemoCSharp
@@ -324,6 +325,10 @@ namespace BBDNRESTDemoCSharp
             {
                 Membership membership = await membershipService.ReadObject();
                 Console.WriteLine("Membership Read: " + membership.ToString());
+                //foreach(var u in membership.user.roles)
+                //{
+                Console.WriteLine(@"				User : {0}-{1} {2}", membership.user.externalId, membership.user.name.given, membership.user.name.family);
+                //}  
             }
 
 

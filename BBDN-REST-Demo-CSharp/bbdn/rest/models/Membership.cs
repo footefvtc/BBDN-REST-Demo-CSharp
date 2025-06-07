@@ -15,6 +15,8 @@ namespace BBDNRESTDemoCSharp
 
         public Availability availability { get; set; }
 
+		public User user { get; set; }
+
 		public string courseRoleId { get; set; }
         public string lastAccessed { get; set; }
 
